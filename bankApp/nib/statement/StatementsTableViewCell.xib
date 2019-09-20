@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="KGk-i7-Jjw" customClass="StatementsTableViewCell" customModule="bankApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="107.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4G-bI-dhg">
+                        <rect key="frame" x="10" y="10" width="397" height="87.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kva-N9-MLj">
+                        <rect key="frame" x="10" y="10" width="397" height="87.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRz-LG-Q0q">
+                        <rect key="frame" x="22" y="22" width="311" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.6588235294117647" green="0.70588235294117641" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta de luz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rq-Ut-7ca">
+                        <rect key="frame" x="22" y="66" width="288.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.32941176470588235" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="12/12/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGW-Qg-dYi">
+                        <rect key="frame" x="333" y="22" width="62" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.6588235294" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="R$1.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8P-FI-vzx">
+                        <rect key="frame" x="310.5" y="64.5" width="87.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.28235294119999998" green="0.3294117647" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="kva-N9-MLj" firstAttribute="trailing" secondItem="X8P-FI-vzx" secondAttribute="trailing" constant="9" id="05a-tf-LxO"/>
+                    <constraint firstItem="9Rq-Ut-7ca" firstAttribute="leading" secondItem="kva-N9-MLj" secondAttribute="leading" constant="12" id="1l1-fc-ll1"/>
+                    <constraint firstItem="o4G-bI-dhg" firstAttribute="bottom" secondItem="kva-N9-MLj" secondAttribute="bottom" id="4yw-qf-v5J"/>
+                    <constraint firstItem="CGW-Qg-dYi" firstAttribute="top" secondItem="kva-N9-MLj" secondAttribute="top" constant="12" id="6G8-6L-hq6"/>
+                    <constraint firstAttribute="bottom" secondItem="kva-N9-MLj" secondAttribute="bottom" constant="10" id="6Sy-M5-g0T"/>
+                    <constraint firstItem="dRz-LG-Q0q" firstAttribute="leading" secondItem="kva-N9-MLj" secondAttribute="leading" constant="12" id="9D5-M0-nbs"/>
+                    <constraint firstItem="o4G-bI-dhg" firstAttribute="top" secondItem="kva-N9-MLj" secondAttribute="top" id="9Ml-Qx-aZf"/>
+                    <constraint firstItem="kva-N9-MLj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="HuF-UY-CfL"/>
+                    <constraint firstItem="o4G-bI-dhg" firstAttribute="trailing" secondItem="kva-N9-MLj" secondAttribute="trailing" id="Kj7-2e-37q"/>
+                    <constraint firstItem="CGW-Qg-dYi" firstAttribute="leading" secondItem="dRz-LG-Q0q" secondAttribute="trailing" id="LPe-Td-WXn"/>
+                    <constraint firstItem="X8P-FI-vzx" firstAttribute="leading" secondItem="9Rq-Ut-7ca" secondAttribute="trailing" id="RHz-qc-9Su"/>
+                    <constraint firstItem="kva-N9-MLj" firstAttribute="bottom" secondItem="9Rq-Ut-7ca" secondAttribute="bottom" constant="12" id="VBU-TW-yOb"/>
+                    <constraint firstItem="kva-N9-MLj" firstAttribute="trailing" secondItem="CGW-Qg-dYi" secondAttribute="trailing" constant="12" id="VCw-by-p43"/>
+                    <constraint firstItem="9Rq-Ut-7ca" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dRz-LG-Q0q" secondAttribute="bottom" constant="19" id="ZZf-vS-pG4"/>
+                    <constraint firstItem="kva-N9-MLj" firstAttribute="bottom" secondItem="X8P-FI-vzx" secondAttribute="bottom" constant="12" id="aKI-Pj-6dv"/>
+                    <constraint firstAttribute="trailing" secondItem="kva-N9-MLj" secondAttribute="trailing" constant="10" id="kFe-Rd-465"/>
+                    <constraint firstItem="kva-N9-MLj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="kPt-up-3iO"/>
+                    <constraint firstItem="dRz-LG-Q0q" firstAttribute="top" secondItem="kva-N9-MLj" secondAttribute="top" constant="12" id="o9V-jZ-8ky"/>
+                    <constraint firstItem="o4G-bI-dhg" firstAttribute="leading" secondItem="kva-N9-MLj" secondAttribute="leading" id="otT-QR-sxM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="CGW-Qg-dYi" id="cmH-85-XJ0"/>
+                <outlet property="descriptionLabel" destination="9Rq-Ut-7ca" id="s0N-gW-1Y0"/>
+                <outlet property="holderView" destination="kva-N9-MLj" id="jbD-BG-ywk"/>
+                <outlet property="shadowView" destination="o4G-bI-dhg" id="u0E-e8-DdE"/>
+                <outlet property="titleLabel" destination="dRz-LG-Q0q" id="2FB-ED-F2o"/>
+                <outlet property="valueLabel" destination="X8P-FI-vzx" id="PT9-RL-ag7"/>
+            </connections>
+            <point key="canvasLocation" x="368.80000000000001" y="220.3898050974513"/>
+        </tableViewCell>
+    </objects>
+</document>

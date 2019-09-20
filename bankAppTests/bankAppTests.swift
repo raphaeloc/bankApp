@@ -2,33 +2,29 @@
 //  bankAppTests.swift
 //  bankAppTests
 //
-//  Created by Raphael Oliveira Chagas on 09/09/19.
+//  Created by Raphael Oliveira Chagas on 20/09/19.
 //  Copyright © 2019 Raphael Oliveira Chagas. All rights reserved.
 //
 
 import XCTest
+import UIKit
 @testable import bankApp
 
 class bankAppTests: XCTestCase {
 
+    var loginVC: LoginViewController?
+    var statementsVC: StatementsViewController?
+    var navigationController: MockViewController?
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+        statementsVC = storyboard.instantiateViewController(withIdentifier: "StatementsViewController") as? StatementsViewController
+        loginVC?.loadView()
+        statementsVC?.loadView()
+        navigationController = MockViewController(rootViewController: loginVC!)
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
