@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var userTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -37,9 +37,10 @@ class LoginViewController: UIViewController {
         self.setAccessibility()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
         self.enableDisableStack()
+        self.passwordTextfield.text = nil
+        super.viewWillAppear(animated)
     }
     
     @IBAction func loginButtonClick(_ sender: UIButton) {
@@ -57,15 +58,11 @@ class LoginViewController: UIViewController {
         var emailOk = false
         var passOk = false
         
-        guard var inputUser = self.userTextfield.text?.lowercased() else {
-            self.setErrorLabel(message: self.emptyText)
-            self.enableDisableStack()
-            return
-        }
-        guard let inputPass = self.passwordTextfield.text else {
-            self.setErrorLabel(message: self.emptyText)
-            self.enableDisableStack()
-            return
+        guard var inputUser = self.userTextfield.text?.lowercased(),
+            let inputPass = self.passwordTextfield.text else {
+                self.setErrorLabel(message: self.emptyText)
+                self.enableDisableStack()
+                return
         }
         
         if inputUser.isEmpty || inputPass.isEmpty {
@@ -74,7 +71,9 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let hasJustNumbers = CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: inputUser))
+        let hasJustNumbers = CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: inputUser
+            .replacingOccurrences(of: ".", with: "")
+            .replacingOccurrences(of: "/", with: "")))
         
         if inputUser.count == 11 && hasJustNumbers {
             inputUser = ToolBox.shared.makeCPF(text: inputUser)
@@ -83,8 +82,7 @@ class LoginViewController: UIViewController {
             emailOk = NSPredicate.matchRegex(regex: self.strLiteralEmail, stringToCheck: inputUser)
         }
         
-        passOk = NSPredicate.matchRegex(regex: self.strLiteralPass, stringToCheck: inputUser)
-        
+        passOk = NSPredicate.matchRegex(regex: self.strLiteralPass, stringToCheck: inputPass)
         
         if cpfOk || emailOk && passOk {
             provider.postLogin(user: inputUser, password: inputPass) { (login) in
@@ -102,8 +100,7 @@ class LoginViewController: UIViewController {
     }
     
     func buildStatementsViewController(account: Login) {
-        let storyboard = UIStoryboard(name: self.storyboardName, bundle: Bundle.main)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: self.statementsVCIndentifier) as? StatementsViewController else {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: self.statementsVCIndentifier) as? StatementsViewController else {
             self.setErrorLabel(message: self.errorOnTheServer)
             self.enableDisableStack()
             return
@@ -137,6 +134,7 @@ class LoginViewController: UIViewController {
             self.loginStack.isUserInteractionEnabled = true
             self.loginStack.alpha = 1
             self.loginButton.isEnabled = true
+            self.tryAgainLabel.isHidden = true
             self.activityIndicator.stopAnimating()
         }
     }
@@ -153,9 +151,19 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        self.tryAgainLabel.isHidden = true
-        self.setAccessibility()
-        return true
+        var canReplace = true
+        if textField == self.passwordTextfield && !self.tryAgainLabel.isHidden {
+            if string == "" {
+                self.passwordTextfield.text = nil
+                canReplace = false
+            }
+            self.tryAgainLabel.isHidden = true
+            self.setAccessibility()
+        }
+        if canReplace {
+            return true
+        }
+        return false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
