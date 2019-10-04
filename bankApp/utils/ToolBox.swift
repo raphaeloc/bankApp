@@ -24,8 +24,6 @@ class ToolBox {
         let dateFomatter = DateFormatter()
         let date = dateStr.replacingOccurrences(of: "-", with: "/")
         dateFomatter.dateFormat = "yyyy/MM/dd"
-        dateFomatter.locale = Locale(identifier: "pt-br")
-        dateFomatter.timeZone = TimeZone(abbreviation: "UTC")
         guard let dateF = dateFomatter.date(from: date) else { return "" }
         dateFomatter.dateFormat = "dd/MM/yyyy"
         let strDate = dateFomatter.string(from: dateF)
