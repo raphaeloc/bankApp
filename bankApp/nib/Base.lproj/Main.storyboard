@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AM8-Wu-4h1">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="bankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="o9r-rb-Niv">
-                                <rect key="frame" x="97.5" y="56" width="125" height="70"/>
+                                <rect key="frame" x="125" y="56" width="125" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="bhw-Dg-rQQ"/>
                                     <constraint firstAttribute="width" constant="125" id="hB1-dd-I9t"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xne-NC-IzL">
-                                <rect key="frame" x="62" y="406" width="196" height="62"/>
+                                <rect key="frame" x="62" y="593" width="251" height="62"/>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.28235294117647058" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Fazer login"/>
                                 <constraints>
@@ -40,10 +40,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHf-wP-5BQ">
-                                <rect key="frame" x="12" y="185" width="296" height="110"/>
+                                <rect key="frame" x="12" y="278.5" width="351" height="110"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-iw-pdp">
-                                        <rect key="frame" x="0.0" y="0.0" width="296" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="eOf-7f-ePd"/>
                                         </constraints>
@@ -52,7 +52,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pk-k3-orD">
-                                        <rect key="frame" x="0.0" y="60" width="296" height="50"/>
+                                        <rect key="frame" x="0.0" y="60" width="351" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="f4j-vo-jD4"/>
                                         </constraints>
@@ -61,7 +61,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login or password wrong. Try again." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hca-Wn-Z0B">
-                                        <rect key="frame" x="0.0" y="110" width="296" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="110" width="351" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.91488516330718994" green="0.0" blue="0.010400115569885297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -102,11 +102,11 @@
             <objects>
                 <viewController storyboardIdentifier="StatementsViewController" id="qd3-Xo-dyR" customClass="StatementsViewController" customModule="bankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNe-qg-JAJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSH-2M-QxQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Lorem ipsum pretium " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-bG-Nm3">
                                         <rect key="frame" x="18" y="50" width="232" height="19.5"/>
@@ -115,7 +115,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75A-Qh-d8L">
-                                        <rect key="frame" x="280" y="48" width="27" height="24"/>
+                                        <rect key="frame" x="335" y="48" width="27" height="24"/>
                                         <accessibility key="accessibilityConfiguration" label="sair"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="DsB-1p-hXV"/>
@@ -197,7 +197,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePH-q7-rIA">
-                                <rect key="frame" x="0.0" y="232" width="320" height="248"/>
+                                <rect key="frame" x="0.0" y="232" width="375" height="435"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qd3-Xo-dyR" id="QAv-YT-or5"/>

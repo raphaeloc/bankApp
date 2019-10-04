@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
         passOk = NSPredicate.matchRegex(regex: self.strLiteralPass, stringToCheck: inputPass)
         
         if cpfOk || emailOk && passOk {
-            provider.postLogin(user: inputUser, password: inputPass) { (login) in
+            provider.postLogin(user: inputUser, password: inputPass, mocked: true) { (login) in
                 if let login = login {
                     self.buildStatementsViewController(account: login)
                 } else {
@@ -109,12 +109,12 @@ class LoginViewController: UIViewController {
         }
         
         let userId = String(account.userAccount.userID)
-        self.provider.getStatements(userId: userId) { (statements) in
+        self.provider.getStatements(userId: userId, mocked: true) { (statements) in
             if statements != nil {
                 let userAccount = account.userAccount
                 vc.statements = statements
                 vc.dateUser = userAccount
-                self.activityIndicator.isHidden = true
+                self.loadingView.hide(parent: self.view)
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
@@ -127,24 +127,22 @@ class LoginViewController: UIViewController {
     func enableDisableStack(willDisable: Bool = false) {
         switch willDisable {
         case true:
+            self.loadingView.show(parent: self.view)
             self.loginStack.isUserInteractionEnabled = false
             self.loginStack.alpha = 0.5
             self.loginButton.isEnabled = false
-            self.activityIndicator.isHidden = false
-            self.loadingView.show(parent: self.view)
         case false:
+            self.loadingView.hide(parent: self.view)
             self.loginStack.isUserInteractionEnabled = true
             self.loginStack.alpha = 1
             self.loginButton.isEnabled = true
             self.tryAgainLabel.isHidden = true
-            self.loadingView.hide(parent: self.view) 
         }
     }
     
     func setErrorLabel(message: String) {
         self.tryAgainLabel.text = message
         self.tryAgainLabel.isHidden = false
-        self.activityIndicator.isHidden = true
         self.accessibilityElements = [self.userTextfield, self.passwordTextfield, self.tryAgainLabel, self.loginButton]
     }
     
