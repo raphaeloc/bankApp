@@ -126,8 +126,8 @@ class LoginViewController: UIViewController {
     
     func enableDisableStack(willDisable: Bool = false) {
         switch willDisable {
-        case true:
-            self.loadingView.show(parent: self.view)
+        case true: 
+            self.loadingView.show(parent: self.view, color: nil, alpha: nil)
             self.loginStack.isUserInteractionEnabled = false
             self.loginStack.alpha = 0.5
             self.loginButton.isEnabled = false

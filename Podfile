@@ -5,7 +5,7 @@ source 'https://github.com/raphaeloc'
 
 def pods
  pod 'Alamofire'
-  pod 'LoadingView/Binary', :git => 'https://github.com/raphaeloc/loadingView', :tag => '1.0'
+  pod 'LoadingView/Binary', :git => 'https://github.com/raphaeloc/loadingView', :tag => '1.1'
 end
 
 target 'bankApp' do
