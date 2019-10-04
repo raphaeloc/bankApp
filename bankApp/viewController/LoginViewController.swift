@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var tryAgainLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginStack: UIStackView!
     
     let emptyText = "Usuário ou senha estão vazios."
