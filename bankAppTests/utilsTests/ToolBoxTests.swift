@@ -20,7 +20,11 @@ class ToolBoxTests {
     
     func testMakeBRFormat() {
         let expected = "R$ 0,00"
-        let value = ToolBox.shared.makeBRFormat(valor: 0.0)
+        let value = ToolBox.shared.makeBRFormat(value: 0.0)
         XCTAssertEqual(expected, value)
+    }
+    
+    func testFormatDate() {
+        let teste = ToolBox.shared.formatDate(dateStr: "2018/10/02")
     }
 }

@@ -20,7 +20,19 @@ class ToolBox {
         return newText
     }
     
-    func makeBRFormat(valor: Double) -> String {
+    func formatDate(dateStr: String) -> String {
+        let dateFomatter = DateFormatter()
+        let date = dateStr.replacingOccurrences(of: "-", with: "/")
+        dateFomatter.dateFormat = "yyyy/MM/dd"
+        dateFomatter.locale = Locale(identifier: "pt-br")
+        dateFomatter.timeZone = TimeZone(abbreviation: "UTC")
+        guard let dateF = dateFomatter.date(from: date) else { return "" }
+        dateFomatter.dateFormat = "dd/MM/yyyy"
+        let strDate = dateFomatter.string(from: dateF)
+        return strDate
+    }
+    
+    func makeBRFormat(value: Double) -> String {
         let currencyFomatter = NumberFormatter()
         currencyFomatter.usesGroupingSeparator = true
         currencyFomatter.numberStyle = .decimal
@@ -29,7 +41,7 @@ class ToolBox {
         currencyFomatter.decimalSeparator = ","
         currencyFomatter.groupingSeparator = "."
         currencyFomatter.currencyCode = "BRL"
-        guard let fomattedString = currencyFomatter.string(for: valor) else { return "R$ 0,00" }
+        guard let fomattedString = currencyFomatter.string(for: value) else { return "R$ 0,00" }
         
         return "R$ \(fomattedString)"
     }

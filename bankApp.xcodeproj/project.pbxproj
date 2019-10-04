@@ -33,6 +33,7 @@
 		17F2886A232814B00017B918 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F28869232814B00017B918 /* Error.swift */; };
 		17F2886D232814DF0017B918 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F2886C232814DF0017B918 /* ApiProvider.swift */; };
 		3C828025040E30C4DE83BB8B /* Pods_bankApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766F6ABE4257C7DE46F72279 /* Pods_bankApp.framework */; };
+		85A0921CB9B08E496F8FB133 /* Pods_bankAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F6B5308B4A6361600AA411 /* Pods_bankAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A0921CB9B08E496F8FB133 /* Pods_bankAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +302,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17D952352335451A007D0E76 /* Build configuration list for PBXNativeTarget "bankAppTests" */;
 			buildPhases = (
+				6943F4ADE5C393D365071151 /* [CP] Check Pods Manifest.lock */,
 				17D9522A2335451A007D0E76 /* Sources */,
 				17D9522B2335451A007D0E76 /* Frameworks */,
 				17D9522C2335451A007D0E76 /* Resources */,
@@ -394,6 +397,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6943F4ADE5C393D365071151 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bankAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B9C1941EC3D8666A2C6DE3A8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +527,7 @@
 /* Begin XCBuildConfiguration section */
 		17D952362335451A007D0E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16214F789DF856C99C43743D /* Pods-bankAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +548,7 @@
 		};
 		17D952372335451A007D0E76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0721CA59230C8F2B94D7AE2 /* Pods-bankAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

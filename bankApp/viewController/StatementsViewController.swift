@@ -35,7 +35,7 @@ class StatementsViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         accountLabel.text = "\(dateUser?.bankAccount ?? "") / \(dateUser?.agency ?? "")"
         nameLabel.text = dateUser?.name
-        balanceLabel.text = ToolBox.shared.makeBRFormat(valor: dateUser?.balance ?? 0)
+        balanceLabel.text = ToolBox.shared.makeBRFormat(value: dateUser?.balance ?? 0)
         self.setAccessibility()
     }
     
@@ -93,11 +93,14 @@ extension StatementsViewController: UITableViewDataSource {
         let statement = statements?.statementList[indexPath.row]
         
         cell.titleLabel.text = statement?.title
-        cell.dateLabel.text = statement?.date
+        cell.dateLabel.text = ToolBox.shared.formatDate(dateStr: statement?.date ?? "")
         cell.descriptionLabel.text = statement?.desc
-        cell.valueLabel.text = ToolBox.shared.makeBRFormat(valor: statement?.value ?? 0)
+        cell.valueLabel.text = ToolBox.shared.makeBRFormat(value: statement?.value ?? 0)
         cell.setRounded()
         cell.setAccessibility()
+        if statement?.value ?? 0.0 < 0.0 {
+            cell.valueLabel.textColor = .red
+        }
         
         return cell
     }

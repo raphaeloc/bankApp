@@ -1,0 +1,11 @@
+framework module LoadingView {
+  umbrella header "LoadingView.h"
+
+  export *
+  module * { export * }
+}
+
+module LoadingView.Swift {
+    header "LoadingView-Swift.h"
+    requires objc
+}

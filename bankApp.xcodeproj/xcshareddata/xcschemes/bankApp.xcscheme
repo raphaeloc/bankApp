@@ -20,6 +20,20 @@
                ReferencedContainer = "container:bankApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "17D9522D2335451A007D0E76"
+               BuildableName = "bankAppTests.xctest"
+               BlueprintName = "bankAppTests"
+               ReferencedContainer = "container:bankApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

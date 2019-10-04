@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LoadingView
 
 class LoginViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
     let statementsVCIndentifier = "StatementsViewController"
     let storyboardName = "Main"
     let provider = ApiProvider()
+    let loadingView = ROCLoadingView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.enableDisableStack()
         self.passwordTextfield.text = nil
+        self.navigationController?.isNavigationBarHidden = true
         super.viewWillAppear(animated)
     }
     
@@ -129,13 +132,13 @@ class LoginViewController: UIViewController {
             self.loginStack.alpha = 0.5
             self.loginButton.isEnabled = false
             self.activityIndicator.isHidden = false
-            self.activityIndicator.startAnimating()
+            self.loadingView.show(parent: self.view)
         case false:
             self.loginStack.isUserInteractionEnabled = true
             self.loginStack.alpha = 1
             self.loginButton.isEnabled = true
             self.tryAgainLabel.isHidden = true
-            self.activityIndicator.stopAnimating()
+            self.loadingView.hide(parent: self.view) 
         }
     }
     
