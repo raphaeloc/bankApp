@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHf-wP-5BQ">
-                                <rect key="frame" x="12" y="278.5" width="351" height="110"/>
+                                <rect key="frame" x="12" y="258" width="351" height="151"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-iw-pdp">
                                         <rect key="frame" x="0.0" y="0.0" width="351" height="50"/>
@@ -61,11 +61,25 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login or password wrong. Try again." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hca-Wn-Z0B">
-                                        <rect key="frame" x="0.0" y="110" width="351" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="115" width="351" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.91488516330718994" green="0.0" blue="0.010400115569885297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-rs-O5Q">
+                                        <rect key="frame" x="0.0" y="120" width="351" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dJa-in-NAq">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salvar login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEn-q5-1i3">
+                                                <rect key="frame" x="57" y="0.0" width="294" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -89,6 +103,7 @@
                         <outlet property="loginButton" destination="xne-NC-IzL" id="qPf-Tw-zi7"/>
                         <outlet property="loginStack" destination="bHf-wP-5BQ" id="cId-mx-Ua0"/>
                         <outlet property="passwordTextfield" destination="4pk-k3-orD" id="NCK-te-H6o"/>
+                        <outlet property="switchButton" destination="dJa-in-NAq" id="39B-54-iiA"/>
                         <outlet property="tryAgainLabel" destination="hca-Wn-Z0B" id="MQA-gW-uwg"/>
                         <outlet property="userTextfield" destination="qTD-iw-pdp" id="J2L-4k-aqZ"/>
                     </connections>

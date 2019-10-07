@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var tryAgainLabel: UILabel!
     @IBOutlet weak var loginStack: UIStackView!
+    @IBOutlet weak var switchButton: UISwitch!
     
     let emptyText = "Usuário ou senha estão vazios."
     let wrongCredentials = "Usuário ou senha incorretos. Tente novamente."
@@ -25,8 +26,11 @@ class LoginViewController: UIViewController {
     let strLiteralPass = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&*_+=])[a-zA-Z]\\S{8,}$"
     let statementsVCIndentifier = "StatementsViewController"
     let storyboardName = "Main"
+    let keyUserDefaultsForUser = "userField"
+    let keyUserDefaultsForPass = "passField"
     let provider = ApiProvider()
     let loadingView = ROCLoadingView()
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +40,32 @@ class LoginViewController: UIViewController {
         self.loginButton.layer.cornerRadius = 4
         self.loginButton.layer.masksToBounds = true
         self.setAccessibility()
+        if let userText = userDefaults.value(forKey: keyUserDefaultsForUser) as? String, let passText = userDefaults.value(forKey: keyUserDefaultsForPass) as? String {
+            self.userTextfield.text = userText
+            self.passwordTextfield.text = passText
+            self.switchButton.isOn = true
+            self.tryLogin()
+            return
+        }
+        
+        if let userText = userDefaults.value(forKey: keyUserDefaultsForUser) as? String {
+            self.userTextfield.text = userText
+            self.passwordTextfield.becomeFirstResponder()
+        } else {
+            self.userTextfield.becomeFirstResponder()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.enableDisableStack()
         self.passwordTextfield.text = nil
         self.navigationController?.isNavigationBarHidden = true
+        
         super.viewWillAppear(animated)
     }
     
     @IBAction func loginButtonClick(_ sender: UIButton) {
+        self.saveLogin()
         self.tryLogin()
     }
     
@@ -117,6 +137,7 @@ class LoginViewController: UIViewController {
                 self.loadingView.hide(parent: self.view)
                 
                 self.navigationController?.pushViewController(vc, animated: true)
+                self.savePass()
             } else {
                 self.enableDisableStack()
                 self.setErrorLabel(message: self.errorOnTheServer)
@@ -126,8 +147,8 @@ class LoginViewController: UIViewController {
     
     func enableDisableStack(willDisable: Bool = false) {
         switch willDisable {
-        case true: 
-            self.loadingView.show(parent: self.view, color: nil, alpha: nil)
+        case true:
+            self.loadingView.show(parent: self.view, color: UIColor(rgb: 0x3B48EE), alpha: 1.0)
             self.loginStack.isUserInteractionEnabled = false
             self.loginStack.alpha = 0.5
             self.loginButton.isEnabled = false
@@ -144,6 +165,22 @@ class LoginViewController: UIViewController {
         self.tryAgainLabel.text = message
         self.tryAgainLabel.isHidden = false
         self.accessibilityElements = [self.userTextfield, self.passwordTextfield, self.tryAgainLabel, self.loginButton]
+    }
+    
+    func savePass() {
+        if self.switchButton.isOn {
+            guard let pass = self.passwordTextfield.text else { return }
+            userDefaults.setValue(pass, forKey: self.keyUserDefaultsForPass)
+            userDefaults.synchronize()
+        } else {
+            userDefaults.removeObject(forKey: self.keyUserDefaultsForPass)
+        }
+    }
+    
+    func saveLogin() {
+        guard let user = self.userTextfield.text else { return }
+        userDefaults.setValue(user, forKey: self.keyUserDefaultsForUser)
+        userDefaults.synchronize()
     }
     
 }

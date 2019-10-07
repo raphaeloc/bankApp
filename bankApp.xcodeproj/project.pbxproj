@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17621C162347B0560047184F /* UserData.json in Resources */ = {isa = PBXBuildFile; fileRef = 17621C142347B0560047184F /* UserData.json */; };
 		17621C172347B0560047184F /* Statements.json in Resources */ = {isa = PBXBuildFile; fileRef = 17621C152347B0560047184F /* Statements.json */; };
+		17621C202347D73C0047184F /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17621C1F2347D73C0047184F /* UIColor+Utils.swift */; };
 		1791381F232FFE60004E209A /* NSPredicate+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791381E232FFE60004E209A /* NSPredicate+Utils.swift */; };
 		17AE8AB0232BD0EA00335ECD /* StatementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE8AAF232BD0EA00335ECD /* StatementsViewController.swift */; };
 		17AE8AB4232BD2FA00335ECD /* Statements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE8AB3232BD2FA00335ECD /* Statements.swift */; };
@@ -54,6 +55,7 @@
 		16214F789DF856C99C43743D /* Pods-bankAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankAppTests.debug.xcconfig"; path = "Target Support Files/Pods-bankAppTests/Pods-bankAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		17621C142347B0560047184F /* UserData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserData.json; sourceTree = "<group>"; };
 		17621C152347B0560047184F /* Statements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Statements.json; sourceTree = "<group>"; };
+		17621C1F2347D73C0047184F /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		1791381E232FFE60004E209A /* NSPredicate+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Utils.swift"; sourceTree = "<group>"; };
 		17AE8AAF232BD0EA00335ECD /* StatementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsViewController.swift; sourceTree = "<group>"; };
 		17AE8AB3232BD2FA00335ECD /* Statements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statements.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				1791381E232FFE60004E209A /* NSPredicate+Utils.swift */,
+				17621C1F2347D73C0047184F /* UIColor+Utils.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				17D9521723353FA2007D0E76 /* ToolBox.swift in Sources */,
 				17F28868232814730017B918 /* UserAccount.swift in Sources */,
 				17AE8AB6232BD30F00335ECD /* StatementsList.swift in Sources */,
+				17621C202347D73C0047184F /* UIColor+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
